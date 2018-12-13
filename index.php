@@ -1,10 +1,6 @@
 <?php
-  session_start();
-  if(isset($_SESSION['UserID']) == '') {
-
-  } else {
-    print("<script>location.href = 'home.php';</script>");
-  }
+require_once 'autoload.php';
+IndexPage::boot();
 ?>
 <!DOCTYPE HTML>
 <html lang="ja">
@@ -72,11 +68,11 @@
         </div>
       </div>
       <div class="row">
-        <form class="col s12" action="logindo.php" method="POST">
+        <form class="col s12" action="index.php" method="POST">
           <div class="row">
             <div class="input-field col s12">
-              <input id="userid" name="userid" class="validate" type="text" required>
-              <label for="userid">ユーザID</label>
+              <input id="user_id" name="user_id" class="validate" type="text" required>
+              <label for="user_id">ユーザID</label>
             </div>
             <div class="input-field col s12">
               <input id="password" name="password" class="validate" type="password" required>
